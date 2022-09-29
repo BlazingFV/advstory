@@ -12,6 +12,7 @@ import 'package:advstory/src/view/story_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:preload_page_view/preload_page_view.dart';
 
 /// Builds a tray list.
 class TrayView extends StatefulWidget {
@@ -119,7 +120,7 @@ class _TrayViewState extends State<TrayView> with TickerProviderStateMixin {
     ).animate(_posController);
 
     // Set story PageController to start from the given index.
-    widget.controller.storyController = PageController(initialPage: pos.story);
+    widget.controller.storyController = PreloadPageController(initialPage: pos.story);
 
     _show(
       SlideTransition(

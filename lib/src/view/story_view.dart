@@ -5,6 +5,7 @@ import 'package:advstory/src/view/inherited_widgets/data_provider.dart';
 import 'package:advstory/src/view/content_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:preload_page_view/preload_page_view.dart';
 
 /// Creates a content group view.
 class StoryView extends StatefulWidget {
@@ -62,8 +63,11 @@ class _StoryViewState extends State<StoryView> {
           onHorizontalDragUpdate: _handleDragUpdate,
           onHorizontalDragEnd: _handleDragEnd,
           onHorizontalDragCancel: _resetParams,
-          child: PageView.builder(
-            allowImplicitScrolling: _provider!.preloadStory,
+          child: PreloadPageView.builder(
+            preloadPagesCount: 1,
+            scrollDirection: Axis.vertical,
+        
+            // allowImplicitScrolling: _provider!.preloadStory,
             physics: const NeverScrollableScrollPhysics(),
             pageSnapping: false,
             controller: _provider!.controller.storyController!,

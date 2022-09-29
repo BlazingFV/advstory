@@ -13,6 +13,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:advstory/src/util/position_notifier.dart';
+import 'package:preload_page_view/preload_page_view.dart';
 
 const String _navigationExc = "Couldn't navigate, story view is not visible.";
 
@@ -50,7 +51,7 @@ class AdvStoryControllerImpl implements AdvStoryController {
 
   /// Story pageview controller. This controller lets controller to skip next
   /// and previous story.
-  PageController? storyController;
+  PreloadPageController? storyController;
 
   /// Active content pageview controller. This controller lets to skip next and
   /// previous content.
